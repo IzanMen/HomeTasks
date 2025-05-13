@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenido a la aplicación de tareas del hogar. Desde esta página podrás administrar el catálogo de tareas.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../main.css">
+    <title>Home Tasks App | Catálogo de Tareas</title>
+</head>
+<body>
+    <main class="main" style="display: none;">
+        <a href="../" class="main-menu">Menú</a>
+        <span class="main-add">
+            <svg width="42" height="42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M41.28 22.52H22.56V41.4h-3.44V22.52H.48v-3.04h18.64V.6h3.44v18.88h18.72v3.04Z" fill="#01D086"/></svg>
+        </span>
+        <h1>CATÁLOGO DE TAREAS</h1>
+        <ul class="main-list"></ul>
+        <form action="" class="main-form" style="display: none;">
+            <svg class="main-form__close" width="42" height="42" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M41.28 22.52H22.56V41.4h-3.44V22.52H.48v-3.04h18.64V.6h3.44v18.88h18.72v3.04Z" fill="#fff"/></svg>
+            <input required type="text" placeholder="TÍTULO" class="main-form__input main-form__input--title" />
+            <input required type="text" placeholder="DESCRIPCIÓN" class="main-form__input main-form__input--description" />
+            <input required type="number" step="0.01" placeholder="RECOMPENSA" class="main-form__input main-form__input--reward">
+            <input type="submit" value="AÑADIR TAREA" class="main-form__submit main-form__submit--add" />
+        </form>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

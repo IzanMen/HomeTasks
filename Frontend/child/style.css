@@ -1,0 +1,122 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 200px 0;
+}
+
+.main-amount {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    right: 100px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    color: var(--color-green);
+    font-weight: 900;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.main-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 50px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.main-list__item {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-radius: 100px;
+    min-width: 600px;
+}
+
+.main-list__item-check-pending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #0000;
+    border: 1px solid #0005;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.main-list__item-check-pending:hover {
+    background-color: var(--color-green);
+    border: none;
+}
+
+.main-list__item-check-completed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-green);
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.main-list__item-content__title {
+    font-weight: 500;
+}
+
+.main-list__item-content__description {
+    color: #000a;
+    font-size: .9rem;
+}
+
+.main-list__item-reward {
+    margin-left: auto;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--color-green);
+}
+
+@media screen and (max-width: 750px) {
+    .main-list__item-content__title {
+        font-size: 1rem;
+    }
+
+    .main-list__item-content__description {
+        font-size: 0.8rem;
+    }
+
+    .main-list__item-reward {
+        font-size: 1rem;
+    }
+
+    .main-list__item-check-completed, .main-list__item-check-pending {
+        width: 30px;
+        height: 30px;
+    }
+
+    .main-amount {
+        position: fixed;
+        top: calc(100vh - 130px);
+        right: 20px;
+    }
+
+    .main {
+        padding-top: 100px;
+    }
+}

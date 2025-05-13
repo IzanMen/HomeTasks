@@ -1,0 +1,133 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 200px 0;
+}
+
+h1 {
+    margin-bottom: 100px;
+}
+
+.main-menu {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: flex;
+    color: #000;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.main-menu:hover {
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.main-amount {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    right: 100px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    color: var(--color-green);
+    font-weight: 900;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-amount p {
+    font-size: 1.2rem;
+}
+
+.main-amount-text {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-red);
+    text-align: center;
+    padding: 0 10px;
+    border: 1px solid var(--color-red);
+    border-radius: 100px;
+}
+
+.main-amount-text:hover {
+    cursor: pointer;
+}
+
+.main-completed, .main-pending, .main-unassigned {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    max-width: 95%;
+    height: 100%;
+    overflow-x: auto;
+}
+
+.main-completed__item, .main-pending__item, .main-unassigned__item {
+    display: flex;
+    align-items: center;
+    padding: 25px 50px;
+    background-color: #fff;
+    border-radius: 100px;
+    width: 80%;
+    min-width: 1000px;
+}
+
+.main-completed__item-content__title, .main-pending__item-content__title, .main-unassigned__item-content__title {
+    font-weight: 500;
+}
+
+.main-completed__item-content__description, .main-pending__item-content__description, .main-unassigned__item-content__description {
+    color: #000a;
+    font-size: .9rem;
+}
+
+.main-completed__item-reward, .main-pending__item-reward, .main-unassigned__item-reward {
+    margin-left: auto;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--color-green);
+    margin-right: 50px;
+}
+
+.main-completed__item-button, .main-unassigned__item-button, .main-pending__item-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-green);
+    border: 2px solid var(--color-green);
+    border-radius: 100px;
+    padding: 3px 20px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+}
+
+.main-pending__item-button {
+    color: var(--color-red);
+    border: 2px solid var(--color-red);
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        padding: 100px 0;
+    }
+    
+    .main-amount {
+        position: fixed;
+        top: calc(100vh - 130px);
+        right: 20px;
+        z-index: 10;
+    }
+}

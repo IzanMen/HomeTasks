@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #DEFFF3, #FBFFC5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+:root {
+    --color-blue-light: #DEFFF3;
+    --color-blue: #2EC4B6;
+    --color-green: #01D086;
+    --color-red: #FF5353;
+}

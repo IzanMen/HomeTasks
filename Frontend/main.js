@@ -1,0 +1,36 @@
+document.querySelector('.main-container__form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = e.target[0].value;
+    const password = e.target[1].value;
+
+    // Realizar la solicitud de inicio de sesión
+    const res = await fetch('http://localhost:8000/users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+    });
+
+    console.log(res);
+
+    if (!res.ok) {
+        throw new Error('Usuario o contraseña incorrectos');
+    }
+
+    // Obtener los datos de la respuesta
+    const data = await res.json();
+    const token = data.access_token;
+    const role = data.role;
+
+    // Guardar el token en localStorage
+    localStorage.setItem('token', token);
+    
+    // Redirigir según el rol
+    if (role === 'parent') {
+        window.location.href = '/admin';
+    } else {
+        window.location.href = '/child';
+    }
+});
