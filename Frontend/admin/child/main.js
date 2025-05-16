@@ -161,6 +161,7 @@
 
                     // EVENTOS DE BOTONES
                     document.querySelectorAll('.main-completed__item-button').forEach(button => {
+                        console.log(button)
                         button.addEventListener('click', async (e) => {
                             const taskId = e.target.closest('li').dataset.taskId;
                             const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/complete-confirm`, {
