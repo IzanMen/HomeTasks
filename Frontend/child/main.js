@@ -10,7 +10,7 @@
     const playload = JSON.parse(playloadJson);
     const userId = playload.sub;
   
-    const resUser = await fetch(`http://localhost:8000/users/get/${userId}`, {
+    const resUser = await fetch(`https://sculpin-pro-newly.ngrok-free.app//users/get/${userId}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -33,7 +33,7 @@
     const amountSpan = document.querySelector('.main-amount');
     amountSpan.textContent = `${user.amount.toFixed(2)} €`;
 
-    const resTasks = await fetch(`http://localhost:8000/tasks/assigned/${userId}`, {
+    const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app//tasks/assigned/${userId}`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -46,7 +46,7 @@
         const listaPendientes = document.querySelector('.main-list.--pending');
         listaPendientes.innerHTML = `<li class="main-list__item"><p>¡No tienes tareas pendientes!</p></li>`;
 
-        const resAllTasks = await fetch('http://localhost:8000/tasks/get', {
+        const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app//tasks/get', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -107,7 +107,7 @@
                     const taskId = item.dataset.taskId;
                     const userId = item.dataset.userId;
     
-                    const res = await fetch (`http://localhost:8000/tasks/complete`, {
+                    const res = await fetch (`https://sculpin-pro-newly.ngrok-free.app//tasks/complete`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',

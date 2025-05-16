@@ -5,15 +5,13 @@ document.querySelector('.main-container__form').addEventListener('submit', async
     const password = e.target[1].value;
 
     // Realizar la solicitud de inicio de sesión
-    const res = await fetch('http://localhost:8000/users/login', {
+    const res = await fetch('https://sculpin-pro-newly.ngrok-free.app/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, password })
     });
-
-    console.log(res);
 
     if (!res.ok) {
         throw new Error('Usuario o contraseña incorrectos');
@@ -29,8 +27,8 @@ document.querySelector('.main-container__form').addEventListener('submit', async
     
     // Redirigir según el rol
     if (role === 'parent') {
-        window.location.href = '/admin';
-    } else {
-        window.location.href = '/child';
-    }
+         window.location.href = '/admin';
+     } else {
+         window.location.href = '/child';
+     }
 });

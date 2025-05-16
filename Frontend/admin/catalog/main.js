@@ -11,7 +11,7 @@
         const playload = JSON.parse(playloadJson);
         const userId = playload.sub;
 
-        const res = await fetch(`http://localhost:8000/users/get/${userId}`, {
+        const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get/${userId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -34,7 +34,7 @@
         window.location.href="/";
     }
 
-    const resTasks = await fetch(`http://localhost:8000/tasks/get`, {
+    const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/get`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -80,7 +80,7 @@
     
                     const taskId = item.parentElement.dataset.taskId;
     
-                    const res = await fetch (`http://localhost:8000/tasks/delete/${taskId}`, {
+                    const res = await fetch (`https://sculpin-pro-newly.ngrok-free.app/tasks/delete/${taskId}`, {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json',
@@ -155,7 +155,7 @@
                 return;
             }
     
-            const res = await fetch(`http://localhost:8000/tasks/create`, {
+            const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -191,7 +191,7 @@
                 return;
             }
     
-            const res = await fetch(`http://localhost:8000/tasks/update/${taskId}`, {
+            const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/update/${taskId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

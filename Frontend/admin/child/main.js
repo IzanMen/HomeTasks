@@ -11,7 +11,7 @@
         const playload = JSON.parse(playloadJson);
         const userId = playload.sub;
 
-        const res = await fetch(`http://localhost:8000/users/get/${userId}`, {
+        const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get/${userId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -37,7 +37,7 @@
     // AÑADIENDO EL NOMBRE DEL USUARIO AL QUE ADMINISTRA
 
     const title = document.querySelector('.main-title');
-    fetch(`http://localhost:8000/users/get`, {
+    fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -65,7 +65,7 @@
 
         async function getTasks() {
             try {
-                const resTasks = await fetch(`http://localhost:8000/tasks/assigned/${childId}`, {
+                const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/assigned/${childId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -134,7 +134,7 @@
                     }
 
                     // Obtener todas las tareas disponibles
-                    const resAllTasks = await fetch('http://localhost:8000/tasks/get', {
+                    const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app/tasks/get', {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }
@@ -163,7 +163,7 @@
                     document.querySelectorAll('.main-completed__item-button').forEach(button => {
                         button.addEventListener('click', async (e) => {
                             const taskId = e.target.closest('li').dataset.taskId;
-                            const res = await fetch(`http://localhost:8000/tasks/complete-confirm`, {
+                            const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/complete-confirm`, {
                                 method: 'PUT',
                                 headers: { 
                                     Authorization: `Bearer ${token}`,
@@ -189,7 +189,7 @@
                             const taskId = e.target.closest('li').dataset.taskId;
                             const userId = localStorage.getItem('childId');
                     
-                            const res = await fetch(`http://localhost:8000/tasks/unassign`, {
+                            const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/unassign`, {
                                 method: 'POST',
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -215,7 +215,7 @@
                             const taskId = e.target.closest('li').dataset.taskId;
                             const childId = localStorage.getItem('childId'); // Asegúrate de que 'childId' esté en localStorage
                     
-                            const res = await fetch(`http://localhost:8000/tasks/assign`, {
+                            const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/assign`, {
                                 method: 'POST',
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -245,7 +245,7 @@
                 const listaPendientes = document.querySelector('.main-pending');
                 listaPendientes.innerHTML = `<li class="main-pending__item"><p>No se pudieron cargar las tareas pendientes.</p></li>`;
 
-                const resAllTasks = await fetch('http://localhost:8000/tasks/get', {
+                const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app/tasks/get', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -275,7 +275,7 @@
                 document.querySelectorAll('.main-completed__item-button').forEach(button => {
                     button.addEventListener('click', async (e) => {
                         const taskId = e.target.closest('li').dataset.taskId;
-                        const res = await fetch(`http://localhost:8000/tasks/complete-confirm`, {
+                        const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/complete-confirm`, {
                             method: 'PUT',
                             headers: { 
                                 Authorization: `Bearer ${token}`,
@@ -301,7 +301,7 @@
                         const taskId = e.target.closest('li').dataset.taskId;
                         const userId = localStorage.getItem('childId');
                 
-                        const res = await fetch(`http://localhost:8000/tasks/unassign`, {
+                        const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/unassign`, {
                             method: 'POST',
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -327,7 +327,7 @@
                         const taskId = e.target.closest('li').dataset.taskId;
                         const childId = localStorage.getItem('childId'); // Asegúrate de que 'childId' esté en localStorage
                 
-                        const res = await fetch(`http://localhost:8000/tasks/assign`, {
+                        const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/assign`, {
                             method: 'POST',
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -352,7 +352,7 @@
         }
 
         document.querySelector('.main-amount-text').addEventListener('click', async () => {
-            const res = await fetch(`http://localhost:8000/users/reset/${childId}`, {
+            const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/reset/${childId}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
