@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.querySelector('.main-container__form')
 
+    console.log(form)
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -36,5 +38,5 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '/child';
         }
     });
-    
+
 });
