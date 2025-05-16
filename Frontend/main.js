@@ -1,4 +1,6 @@
-document.querySelector('.main-container__form').addEventListener('submit', async (e) => {
+const form = document.querySelector('.main-container__form')
+
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const username = e.target[0].value;
