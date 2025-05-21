@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const form = document.querySelector('form');
+    const form = document.querySelector('.main-container__form');
 
     console.log(form)
 
