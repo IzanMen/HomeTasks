@@ -13,7 +13,8 @@
 
         const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get/${userId}`, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
             }
         });
 
@@ -36,7 +37,8 @@
 
     const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/get`, {
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true"
         }
     })
 
@@ -84,7 +86,8 @@
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json',
-                            Authorization: `Bearer ${token}`
+                            Authorization: `Bearer ${token}`,
+                            "ngrok-skip-browser-warning": "true"
                         },
                     });
     
@@ -159,7 +162,8 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`,
+                    "ngrok-skip-browser-warning": "true"
                 },
                 body: JSON.stringify({
                     "id": Math.floor(Math.random() * 900000) + 100000,
@@ -195,7 +199,8 @@
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`,
+                    "ngrok-skip-browser-warning": "true"
                 },
                 body: JSON.stringify({
                     "new_title": title,

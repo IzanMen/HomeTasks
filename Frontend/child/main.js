@@ -10,9 +10,10 @@
     const playload = JSON.parse(playloadJson);
     const userId = playload.sub;
   
-    const resUser = await fetch(`https://sculpin-pro-newly.ngrok-free.app//users/get/${userId}`, {
+    const resUser = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get/${userId}`, {
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true"
         }
     });
   
@@ -33,9 +34,10 @@
     const amountSpan = document.querySelector('.main-amount');
     amountSpan.textContent = `${user.amount.toFixed(2)} €`;
 
-    const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app//tasks/assigned/${userId}`, {
+    const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/assigned/${userId}`, {
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true"
         }
     });
 
@@ -46,9 +48,10 @@
         const listaPendientes = document.querySelector('.main-list.--pending');
         listaPendientes.innerHTML = `<li class="main-list__item"><p>¡No tienes tareas pendientes!</p></li>`;
 
-        const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app//tasks/get', {
+        const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app/tasks/get', {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
             }
         });
     }
@@ -107,11 +110,12 @@
                     const taskId = item.dataset.taskId;
                     const userId = item.dataset.userId;
     
-                    const res = await fetch (`https://sculpin-pro-newly.ngrok-free.app//tasks/complete`, {
+                    const res = await fetch (`https://sculpin-pro-newly.ngrok-free.app/tasks/complete`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
-                            Authorization: `Bearer ${token}`
+                            Authorization: `Bearer ${token}`,
+                            "ngrok-skip-browser-warning": "true"
                         },
                         body: JSON.stringify({
                             task_id: taskId,

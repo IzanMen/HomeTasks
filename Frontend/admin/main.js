@@ -13,7 +13,8 @@
 
         const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get/${userId}`, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
             }
         });
 
@@ -41,7 +42,8 @@
 
     fetch('https://sculpin-pro-newly.ngrok-free.app/users/get', {
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true"
         }
     }).then(res => res.json()).then(users => {
 

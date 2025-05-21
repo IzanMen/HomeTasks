@@ -5,6 +5,8 @@
         window.location.href = '/';
     }
 
+    console.log(token)
+
     try {
         const playloadBase64 = token.split('.')[1];
         const playloadJson = atob(playloadBase64);
@@ -13,7 +15,8 @@
 
         const res = await fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get/${userId}`, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
             }
         });
 
@@ -39,7 +42,8 @@
     const title = document.querySelector('.main-title');
     fetch(`https://sculpin-pro-newly.ngrok-free.app/users/get`, {
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true"
         }
     }).then(res => res.json()).then(data => {
         const childId = localStorage.getItem('childId');
@@ -67,7 +71,8 @@
             try {
                 const resTasks = await fetch(`https://sculpin-pro-newly.ngrok-free.app/tasks/assigned/${childId}`, {
                     headers: {
-                        Authorization: `Bearer ${token}`
+                        Authorization: `Bearer ${token}`,
+                        "ngrok-skip-browser-warning": "true"
                     }
                 });
 
@@ -136,7 +141,8 @@
                     // Obtener todas las tareas disponibles
                     const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app/tasks/get', {
                         headers: {
-                            Authorization: `Bearer ${token}`
+                            Authorization: `Bearer ${token}`,
+                            "ngrok-skip-browser-warning": "true"
                         }
                     });
                     const dataAllTasks = await resAllTasks.json();
@@ -168,7 +174,8 @@
                                 method: 'PUT',
                                 headers: { 
                                     Authorization: `Bearer ${token}`,
-                                    'Content-Type': 'application/json'  
+                                    'Content-Type': 'application/json'  ,
+                                    "ngrok-skip-browser-warning": "true"
                                 },
                                 body: JSON.stringify({ 
                                     task_id: taskId,
@@ -194,7 +201,8 @@
                                 method: 'POST',
                                 headers: {
                                     Authorization: `Bearer ${token}`,
-                                    'Content-Type': 'application/json'  
+                                    'Content-Type': 'application/json'  ,
+                                    "ngrok-skip-browser-warning": "true"
                                 },
                                 body: JSON.stringify({
                                     task_id: taskId,
@@ -220,7 +228,8 @@
                                 method: 'POST',
                                 headers: {
                                     Authorization: `Bearer ${token}`,
-                                    'Content-Type': 'application/json'
+                                    'Content-Type': 'application/json',
+                                    "ngrok-skip-browser-warning": "true"
                                 },
                                 body: JSON.stringify({
                                     task_id: taskId, // Asegúrate de usar `task_id` en vez de `taskId` en el backend
@@ -248,7 +257,8 @@
 
                 const resAllTasks = await fetch('https://sculpin-pro-newly.ngrok-free.app/tasks/get', {
                     headers: {
-                        Authorization: `Bearer ${token}`
+                        Authorization: `Bearer ${token}`,
+                        "ngrok-skip-browser-warning": "true"
                     }
                 });
 
@@ -280,7 +290,8 @@
                             method: 'PUT',
                             headers: { 
                                 Authorization: `Bearer ${token}`,
-                                'Content-Type': 'application/json'  
+                                'Content-Type': 'application/json',
+                                "ngrok-skip-browser-warning": "true"
                             },
                             body: JSON.stringify({ 
                                 task_id: taskId,
@@ -306,7 +317,8 @@
                             method: 'POST',
                             headers: {
                                 Authorization: `Bearer ${token}`,
-                                'Content-Type': 'application/json'  
+                                'Content-Type': 'application/json',
+                                "ngrok-skip-browser-warning": "true"
                             },
                             body: JSON.stringify({
                                 task_id: taskId,
@@ -332,7 +344,8 @@
                             method: 'POST',
                             headers: {
                                 Authorization: `Bearer ${token}`,
-                                'Content-Type': 'application/json'
+                                'Content-Type': 'application/json',
+                                "ngrok-skip-browser-warning": "true"
                             },
                             body: JSON.stringify({
                                 task_id: taskId, // Asegúrate de usar `task_id` en vez de `taskId` en el backend
@@ -357,7 +370,8 @@
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "ngrok-skip-browser-warning": "true"
                 },
                 body: JSON.stringify({
                     user_id: childId
