@@ -108,13 +108,33 @@
 @media screen and (max-width: 800px) {
     .main {
         padding: 100px 0;
+        align-items: start;
     }
     
     .main-add {
         position: fixed;
-        top: calc(100vh - 200px);
+        top: calc(100vh - 120px);
         right: 20px;
         z-index: 10;
+    }
+
+    .main-list__item {
+        padding: 15px 35px;
+    }
+
+    .main-list {
+        padding-left: 0;
+        margin-left: 15px;
+    }
+
+    .main h1 {
+        align-content: start;
+        margin: 0;
+        margin-left: 20px;
+    }
+
+    .main-menu {
+        left: 20px;
     }
 }
 
@@ -127,7 +147,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     padding: 50px;
     padding-top: 90px;
 
@@ -162,7 +182,7 @@
 
 .main-form__input--reward {
     width: 300px;
-    margin-bottom: 120px;
+    margin-bottom: 30px;
 }
 
 .main-form__submit {
@@ -181,8 +201,19 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 1.7rem;
     cursor: pointer;
-    transform: rotate(45deg) scale(.9);
+    transform: rotate(45deg) scale(.8);
     filter: drop-shadow(0 10px 10px #0005);
+}
+
+@media screen and (max-width: 800px) {
+    .main-form {
+        padding: 20px;
+        padding-top: 85px;
+        padding-bottom: 40px;
+    }
+
+    .main-form__input {
+        width: 100%;
+    }
 }

@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .main-menu {
@@ -41,12 +41,13 @@ h2 {
     top: 100px;
     right: 100px;
     background-color: #fff;
-    padding: 30px;
+    padding: 25px;
     border-radius: 50%;
     aspect-ratio: 1/1;
     color: var(--color-green);
     font-weight: 900;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(.9);
 }
 
 .main-amount p {
@@ -138,6 +139,25 @@ h2 {
         z-index: 10;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .main-completed__item, .main-pending__item, .main-unassigned__item {
+        padding: 15px 35px;
+    }
+
+    .main-completed, .main-pending, .main-unassigned {
+        padding-left: 0;
+    }
+
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    .main-menu {
+        left: 20px;
+    }
+}
+
 
 p {
     font-size: .8rem;
