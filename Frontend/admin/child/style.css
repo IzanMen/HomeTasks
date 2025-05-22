@@ -9,6 +9,11 @@
 
 h1 {
     margin-bottom: 100px;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
 }
 
 .main-menu {
@@ -17,7 +22,7 @@ h1 {
     left: 50px;
     display: flex;
     color: #000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 
@@ -36,7 +41,7 @@ h1 {
     top: 100px;
     right: 100px;
     background-color: #fff;
-    padding: 25px;
+    padding: 30px;
     border-radius: 50%;
     aspect-ratio: 1/1;
     color: var(--color-green);
@@ -45,12 +50,12 @@ h1 {
 }
 
 .main-amount p {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .main-amount-text {
     display: block;
-    font-size: 1rem;
+    font-size: .7rem;
     color: var(--color-red);
     text-align: center;
     padding: 0 10px;
@@ -66,9 +71,9 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
     margin-bottom: 50px;
     padding-bottom: 20px;
+    margin-top: 20px;
     max-width: 95%;
     height: 100%;
     overflow-x: auto;
@@ -80,22 +85,24 @@ h1 {
     padding: 25px 50px;
     background-color: #fff;
     border-radius: 100px;
-    width: 80%;
+    width: 100%;
     min-width: 1000px;
 }
 
 .main-completed__item-content__title, .main-pending__item-content__title, .main-unassigned__item-content__title {
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .main-completed__item-content__description, .main-pending__item-content__description, .main-unassigned__item-content__description {
     color: #000a;
-    font-size: .9rem;
+    font-size: .7rem;
+    margin-right: 30px;
 }
 
 .main-completed__item-reward, .main-pending__item-reward, .main-unassigned__item-reward {
     margin-left: auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 900;
     color: var(--color-green);
     margin-right: 50px;
@@ -130,4 +137,8 @@ h1 {
         right: 20px;
         z-index: 10;
     }
+}
+
+p {
+    font-size: .8rem;
 }

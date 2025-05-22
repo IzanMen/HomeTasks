@@ -33,7 +33,7 @@
     right: 50px;
     font-weight: 100;
     aspect-ratio: 1/1;
-    padding: 30px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 50%;
     display: flex;
@@ -41,7 +41,7 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transform: scale(.9);
+    transform: scale(.7);
 }
 
 .main-list {
