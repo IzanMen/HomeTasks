@@ -45,6 +45,7 @@
     border: none;
     border-radius: 100px;
     color: #000a;
+    font-size: .8rem;
 }
 
 .main-container__form input:focus {

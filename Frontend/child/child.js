@@ -91,7 +91,7 @@
     }
 
     if (listaCompletadas.children.length === 0) {
-        listaCompletadas.innerHTML = '<p class="main-list__empty">¡No has completado ninguna tareas!</p>';
+        listaCompletadas.innerHTML = '<p class="main-list__empty">¡No has completado ninguna tarea!</p>';
     } 
 
     const items = document.querySelectorAll('.main-list__item');

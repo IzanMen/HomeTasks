@@ -18,7 +18,7 @@
     left: 50px;
     display: flex;
     color: #000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 
@@ -62,22 +62,24 @@
     padding: 25px 50px;
     background-color: #fff;
     border-radius: 100px;
-    width: 80%;
+    width: 90%;
     min-width: 1000px;
 }
 
 .main-list__item-content__title {
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .main-list__item-content__description {
     color: #000a;
-    font-size: .9rem;
+    font-size: .7rem;
+    margin-right: 40px;
 }
 
 .main-list__item-reward {
     margin-left: auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 900;
     color: var(--color-green);
     margin-right: 50px;
@@ -94,6 +96,7 @@
     font-weight: 900;
     display: flex;
     justify-content: center;
+    font-size: .7rem;
 }
 
 .main-list__item-delete {
