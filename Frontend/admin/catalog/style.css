@@ -144,7 +144,7 @@
     border-radius: 100px;
     border: none;
     background-color: #fff;
-    font-size: 1.2rem;
+    font-size: .9rem;
     font-weight: 500;
     width: 500px;
     max-width: 100%;
@@ -173,7 +173,7 @@
     border: none;
     border-radius: 100px;
     padding: 10px 30px;
-    font-size: 1.2rem;
+    font-size: .9rem;
     cursor: pointer;
 }
 
@@ -181,7 +181,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 2rem;
+    font-size: 1.7rem;
     cursor: pointer;
     transform: rotate(45deg) scale(.9);
     filter: drop-shadow(0 10px 10px #0005);
