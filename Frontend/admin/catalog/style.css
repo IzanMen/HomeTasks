@@ -113,7 +113,7 @@
     
     .main-add {
         position: fixed;
-        top: calc(100vh - 120px);
+        top: calc(100vh - 200px);
         right: 20px;
         z-index: 10;
     }

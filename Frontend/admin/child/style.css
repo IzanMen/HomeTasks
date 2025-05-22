@@ -134,7 +134,7 @@ h2 {
     
     .main-amount {
         position: fixed;
-        top: calc(100vh - 130px);
+        top: calc(100vh - 200px);
         right: 20px;
         z-index: 10;
     }
