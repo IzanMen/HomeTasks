@@ -6,6 +6,7 @@ from models.db_models import Task, TaskUser, User
 from database import get_db
 from typing import Optional, List
 from auth import get_current_user, require_parent_from_token
+from sms_service import send_task_assignment_notification
 
 router = APIRouter()
 
@@ -96,6 +97,23 @@ def assign_task(task_user: TaskUserSchema, db: Session = Depends(get_db), user=D
     )
     db.add(db_task_user)
     db.commit()
+    
+    # Enviar notificación SMS si el usuario tiene teléfono y es un hijo
+    if db_user.phone and db_user.role == "child":
+        try:
+            sms_sent = send_task_assignment_notification(
+                user_name=db_user.username,
+                task_title=task.title,
+                reward=task.reward,
+                phone=db_user.phone
+            )
+            if sms_sent:
+                print(f"SMS enviado correctamente a {db_user.username}")
+            else:
+                print(f"Error al enviar SMS a {db_user.username}")
+        except Exception as e:
+            print(f"Error al enviar notificación SMS: {str(e)}")
+            # No lanzamos excepción aquí para que la asignación se complete aunque falle el SMS
     
     return {"status": 1, "message": "Tarea asignada correctamente."}
 

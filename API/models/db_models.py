@@ -14,6 +14,7 @@ class User(Base):
     password = Column(String(100))
     role = Column(String(20))
     amount = Column(Float, default=0.0)
+    phone = Column(String(20), nullable=True)  # Nuevo campo para el teléfono
     
     # Relación con las tareas asignadas
     tasks = relationship("TaskUser", back_populates="user")

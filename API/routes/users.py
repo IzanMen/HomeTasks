@@ -1,6 +1,6 @@
-from fastapi import APIRouter, HTTPException, Depends, status
+from fastapi import APIRouter, HTTPException, Depends, status, Body
 from sqlalchemy.orm import Session
-from models.user import UserResponse, LoginRequest
+from models.user import UserResponse, LoginRequest, UpdatePhoneRequest
 from models.db_models import User
 from database import get_db
 from typing import List
@@ -38,7 +38,7 @@ def get_user(user_id: int, db: Session = Depends(get_db), current_user=Depends(g
     
     return user
 
-# RESETEAR DINERO -  PADRE
+# RESETEAR DINERO - PADRE
 @router.put("/reset/{user_id}")
 def reset_user(user_id: int, db: Session = Depends(get_db), user=Depends(require_parent_from_token)):
     db_user = db.query(User).filter(User.id == user_id).first()
@@ -48,3 +48,36 @@ def reset_user(user_id: int, db: Session = Depends(get_db), user=Depends(require
     db_user.amount = 0
     db.commit()
     return {"status": 1, "message": "Dinero reseteado correctamente."}
+
+# ACTUALIZAR TELÉFONO - PROPIO O PADRE
+@router.put("/update-phone/{user_id}")
+def update_phone(
+    user_id: int, 
+    phone_data: UpdatePhoneRequest, 
+    db: Session = Depends(get_db), 
+    current_user=Depends(get_current_user)
+):
+    # Verificar permisos
+    if current_user.role != "parent" and current_user.id != user_id:
+        raise HTTPException(status_code=403, detail="No tienes permiso para actualizar este teléfono")
+    
+    db_user = db.query(User).filter(User.id == user_id).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="Usuario no encontrado")
+    
+    # Validar formato del teléfono (básico)
+    phone = phone_data.phone.strip()
+    if not phone:
+        raise HTTPException(status_code=400, detail="El número de teléfono no puede estar vacío")
+    
+    # Si no empieza por +, asumir que es español
+    if not phone.startswith('+'):
+        if len(phone) == 9 and phone.isdigit():
+            phone = f"+34{phone}"
+        else:
+            raise HTTPException(status_code=400, detail="Formato de teléfono inválido. Use +34XXXXXXXXX o XXXXXXXXX")
+    
+    db_user.phone = phone
+    db.commit()
+    
+    return {"status": 1, "message": "Teléfono actualizado correctamente.", "phone": phone}

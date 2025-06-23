@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 # Modelo para login
 class LoginRequest(BaseModel):
@@ -13,6 +14,7 @@ class UserInDB(BaseModel):
     amount: float = 0
     password: str
     role: str
+    phone: Optional[str] = None
 
 # Modelo para la respuesta (sin la contraseña)
 class UserResponse(BaseModel):
@@ -21,3 +23,8 @@ class UserResponse(BaseModel):
     email: str
     role: str
     amount: float = 0
+    phone: Optional[str] = None
+
+# Modelo para actualizar teléfono
+class UpdatePhoneRequest(BaseModel):
+    phone: str
